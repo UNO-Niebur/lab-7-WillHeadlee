@@ -1,4 +1,7 @@
 #NumberTests.py
+#Name: William Headlee
+#Date: 3/2/26
+#Assignment: Lab 7
 
 def isThreeOrFive(n):
   """Returns boolean determination if number is multiple of 3 or 5"""
@@ -7,10 +10,34 @@ def isThreeOrFive(n):
     return True
   else:
     return False
+  
+def findDivisors(n, d):
+  """Returns list of divisors for n based on the root"""
+  num = n
+  divisors = d
+  root = int(num ** 0.5)
+  for i in range(root):
+    divisors.append(i + 2)
+  return divisors
 
 def isPrime(p):
   """Returns boolean (True/False) if the value given is prime."""
+  num = p
+  divisors = []
 
+  if num <= 1:
+    return False
+  
+  if isEven(num):
+    return False
+  
+  
+  divisors = findDivisors(num, divisors)
+
+  for i in divisors:
+    if num % i == 0:
+      return False
+    
   return True
 
 def isEven(n):
@@ -50,8 +77,11 @@ def main():
   if isPrime(num):
     print("%d is a prime number" %(num))
 
-  if isEven(num):
+  elif isEven(num):
     print("%d is an even number" %(num))
+  
+  else:
+    print("%d is not a prime number" %(num))
 
 
 if __name__ == '__main__':

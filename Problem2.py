@@ -1,4 +1,3 @@
-#Problem2.py
 #Project Euler problem 2
 
 from NumberTests import isEven
